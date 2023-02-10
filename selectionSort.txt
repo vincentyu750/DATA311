@@ -1,0 +1,25 @@
+def selectionSort(alist):
+    
+   # Traverse through all array elements 
+    for i in range(len(alist)): 
+
+        # Find the minimum element in remaining unsorted array 
+        min_index = i 
+        for j in range(i+1, len(alist)): 
+            if alist[j] < alist[min_index]: 
+                min_index = j 
+
+        # Swap the found minimum element with the first element          
+        temp = alist[i]
+        alist[i] = alist[min_index]
+        alist[min_index] = temp
+
+# Driver code and data to test run the algorithm
+alist = [54,26,93,17,77,31,44,55,20]
+print("Original Unsorted List")
+print(alist)
+print("\n")
+
+selectionSort(alist)
+print("Sorted List by Selection Sort")
+print(alist)
